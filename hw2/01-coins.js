@@ -1,3 +1,5 @@
+/** Exercise 01 - Coins **/
+
 const calculateChange = (input) => {
   let returnAmt = input
   if (returnAmt > 10){
@@ -57,7 +59,7 @@ const calculateChange = (input) => {
 
       
   }
-}
+};
 
 
 // Sample Test Cases
