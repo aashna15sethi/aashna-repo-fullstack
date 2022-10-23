@@ -28,10 +28,6 @@ const calculateChange = (input) => {
           quarters = Math.floor(quarterAmt)
           console.log(quarters, " quarters")
       }
-      else{
-          quarters = 0
-          console.log(quarters, " quarters")
-      }
 
       if(remainingAmt > 0){
           dimeAmt = ((remainingAmt - (quarters*0.25))/0.10)
@@ -40,22 +36,24 @@ const calculateChange = (input) => {
           console.log(dimes, " dimes")
           //console.log("rem amt", remainingAmt)
       }
-      else{
-          dimes = 0
-          console.log(dimes, " dimes")
-      }
 
-      if(remainingAmt > 10){
+      if(remainingAmt > 0.5){
           nickelAmt = ((remainingAmt - (dimes*0.10))/0.05)
           nickels = Math.floor(nickelAmt)
           remainingAmt = Math.abs(nickelAmt) - Math.floor(nickelAmt)
           console.log(nickels, " nickels")
-          //console.log("rem amt", remainingAmt)
+          console.log("rem amt", remainingAmt)
       }
-      else{
-          nickels = 0
-          console.log(nickels, " nickels")
-      }
+
+      console.log("rem amt", remainingAmt)
+      
+      if(remainingAmt > 0.1){
+        nickelAmt = ((remainingAmt - (nickels*0.05))/0.01)
+        pennies = Math.floor(pennyAmt)
+        remainingAmt = Math.abs(pennyAmt) - Math.floor(pennyAmt)
+        console.log(pennies, "pennies")
+        //console.log("rem amt", remainingAmt)
+    }
 
       
   }
