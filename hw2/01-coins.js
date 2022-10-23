@@ -8,7 +8,7 @@ const calculateChange = (input) => {
   else{
       let dollarAmt = 0
       let quarterAmt = 0
-      let quarters = 0
+      let quarters = 0 
       let dimeAmt = 0
       let dimes = 0
       let remainingAmt = 0
