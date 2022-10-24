@@ -14,5 +14,5 @@ const reverseNumber = () => {
         output.textContent = "Please input an 8 digit number";
     }
    divElement.append(output);
-    return;
+   console.log("output value ",output)
 };
