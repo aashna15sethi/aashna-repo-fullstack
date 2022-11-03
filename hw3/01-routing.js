@@ -74,9 +74,15 @@ const server = http.createServer((req, res) => {
     res.write(`<a href="/home"> Back to home </a>`);
     res.end();
   } else if (req.url === "/check-cookies") {
+    Cookie = req.headers.cookie;
+    console.log("Print the cookie");
+    console.log(Cookie);
     res.writeHead(200, { "Content-Type": "text/html" });
-    // yes/no depending on whether the hello cookie is there
-    res.write(`<h2> Checking Cookies... </h2>`);
+    if (Cookie === "hello=world") {
+      res.write(`<h2> YES </h2>`);
+    } else {
+      res.write(`<h2> NO </h2>`);
+    }
     res.write(`<a href="/home"> Back to home </a>`);
     res.end();
   } else {
