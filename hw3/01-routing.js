@@ -95,9 +95,6 @@ const server = http.createServer((req, res) => {
   else if (req.url === '/check-cookies'){
     res.writeHead(200, { 'Content-Type': 'text/html' });
     // yes/no depending on whether the hello cookie is there
-    
-    
-
     res.write(`<h2> Checking Cookies... </h2>`);
     res.write(`<a href="/home"> Back to home </a>`);
     res.end();

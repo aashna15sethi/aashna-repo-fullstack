@@ -1,5 +1,5 @@
 const http = require('http');
-// const url = require('url');
+const url = require('url');
 
 const port = process.env.PORT || 5000;
 
@@ -9,7 +9,6 @@ const server = http.createServer((req, res) => {
     '/items?first=1&second=2&third=3&fourth=4',
     '/characters?spongebob=squarepants&patrick=star&sandy=cheeks',
   ];
-
   // use the URL interface to work with URLs
   // source: https://developer.mozilla.org/en-US/docs/Web/API/URL
   let url = new URL(req.url, `http://${req.headers.host}`);
