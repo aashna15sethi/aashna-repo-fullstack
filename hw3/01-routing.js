@@ -1,5 +1,5 @@
 const http = require("http");
-// const http = require("follow-redirects").http;
+// const http = require('follow-redirects').http;
 const port = process.env.PORT || 5000;
 
 // http://localhost:5000/welcome should return a status code 200 with a welcome message of your choice in html format
@@ -28,11 +28,9 @@ const server = http.createServer((req, res) => {
 
   let getRoutes = () => {
     let result = "";
-
     routes.forEach(
       (elem) => (result += `<li><a href="/${elem}">${elem}</a></li>`)
     );
-
     return result;
   };
 
@@ -62,7 +60,7 @@ const server = http.createServer((req, res) => {
   } else if (req.url === "/cache") {
     res.writeHead(200, {
       "Content-Type": "text/html",
-      "Cache-Control": "max-age=86400", // 24 hours
+      "Cache-Control": "max-age=86400",
     });
     res.write(`<h2> This resource was cached </h2>`);
     res.write(`<a href="/home"> Back to home </a>`);
