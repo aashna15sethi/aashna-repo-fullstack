@@ -48,11 +48,15 @@ const server = http.createServer((req, res) => {
     res.write(`<h2> WELCOME! </h2>`);
     res.write(`<a href="/home"> Back to home </a>`);
     res.end();
-  } else if (req.url === "/redirect") {
+  } 
+  
+  else if (req.url === "/redirect") {
     let redirectLink = "http://localhost:5000/redirected";
     res.writeHead(302, { Location: redirectLink });
     res.end();
-  } else if (req.url === "/redirected") {
+  } 
+  
+  else if (req.url === "/redirected") {
     res.writeHead(200, { "Content-Type": "text/html" });
     res.write(`<h2> Redirected! </h2>`);
     res.write(`<a href="/home"> Back to home </a>`);
