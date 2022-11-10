@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const static = require("node-static");
+// const static = require("node-static");
 const querystring = require("node:querystring");
 const port = process.env.PORT || 5000;
 
