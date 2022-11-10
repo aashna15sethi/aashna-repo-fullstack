@@ -21,15 +21,27 @@ const server = http.createServer((req, res) => {
 
     req.on("end", function () {
       let formData = queryString.parse(body);
-      const { fname, lname, email } = formData;
+      const { fname, lname, email, comments, yesCheck } = formData;
+      if (comments == "") {
+        formData.comments = "n/a";
+      } else {
+        formData.comments = comments;
+      }
+      if (yesCheck == "yes") {
+        formData.yesCheck = "Yes, sign me up for the newsletter";
+      } else {
+        formData.yesCheck = "No, thank you";
+      }
+      console.log(formData);
       res.writeHead(200, { "Content-Type": "text/html" });
       res.write(`<h2> Your details </h2>
-                   <h3> First name </h3>
-                   ${fname}
-                   <br><h3> Last name </h3>
-                   ${lname}
+                   <p> Name: ${fname} </p>
                    <br><h3> email </h3>
-                   ${email}`);
+                   ${email}
+                   <br><h3> comments </h3>
+                   ${formData.comments}
+                   <br><h3> newsletter </h3>
+                   ${formData.yesCheck}`);
       res.end();
     });
   }
